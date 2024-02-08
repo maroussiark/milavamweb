@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import CategoryCard from "./CategoryCard";
-import api from "../../services/api";
 import { useAuthContext } from "../../contexts";
 import api_public from "../../services/api_public";
 
