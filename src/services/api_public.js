@@ -3,7 +3,7 @@
 import axios from 'axios';
 
 const api_public = axios.create({
-  baseURL: 'http://localhost:8080/', // Remplacez par l'URL de votre backend
+  baseURL: 'https://voiturecloudv3-production.up.railway.app/', // Remplacez par l'URL de votre backend
   headers: {
     'Content-Type': 'application/json',
   },
