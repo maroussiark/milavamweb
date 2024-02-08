@@ -4,7 +4,6 @@ import { useProductsContext } from "../../contexts";
 const SortBy = () => {
   const {
     applyFilters,
-    filters: { sortBy },
   } = useProductsContext();
   return (
     <label>

@@ -4,7 +4,7 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 import bannerImg from "../assets/img/car3.jpg";
 import loadingGif from "../assets/loading.gif";
 
-import { Filters, SingleProduct } from "../components";
+import { Filters, SingleProduct} from "../components";
 
 import { useProductsContext } from "../contexts";
 import { useEffect, useState } from "react";
