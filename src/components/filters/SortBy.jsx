@@ -9,7 +9,6 @@ const SortBy = () => {
     <label>
       <select
         name="sortBy"
-        value={sortBy}
         className="w-max py-1 px-2 rounded-md cursor-pointer shadow-md   hover:shadow-lg "
         onChange={(e) => applyFilters("sortBy", e.target.value)}
       >
