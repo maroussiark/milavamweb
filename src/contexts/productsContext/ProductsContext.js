@@ -45,7 +45,7 @@ const ProductsContextProvider = ({ children }) => {
         setLoading(false);
       }
     })();
-  }, [dispatch, token]);
+  }, [dispatch,token]);
 
   const clearFilters = () => {
 
