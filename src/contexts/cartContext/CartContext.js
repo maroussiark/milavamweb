@@ -14,7 +14,7 @@ export const CartContext = createContext();
 
 const CartContextProvider = ({ children }) => {
   const { token } = useAuthContext();
-  const { updateInCartOrInWish, clearCarted } = useProductsContext();
+  const { updateInCartOrInWish } = useProductsContext();
   const [loadingCart, setLoadingCart] = useState(false);
   const [disableCart, setDisableCart] = useState(false);
 
