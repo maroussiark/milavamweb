@@ -83,7 +83,9 @@ const ProductsContextProvider = ({ children }) => {
       type: filterTypes.CLEAR_FILTER,
     });
   };
-  const trendingProducts = null;
+  const trendingProducts = state.allProducts.filter(
+    (product) => product.trending
+  );
 
   const addAddress = (newAddress) => {
     dispatch({
@@ -119,12 +121,12 @@ const ProductsContextProvider = ({ children }) => {
   return (
     <ProductsContext.Provider
       value={{
-        allProducts: state.allProducts,
-        wishlist: state.wishlist,
-        filters: state.filters,
-        maxRange: state.maxRange,
-        categoryList: state.categoryList,
-        addressList: state.addressList,
+        allProducts: null,
+        wishlist: null,
+        filters: null,
+        maxRange: null,
+        categoryList: null,
+        addressList: null,
         isInCart,
         isInWish,
         isOrderPlaced,
