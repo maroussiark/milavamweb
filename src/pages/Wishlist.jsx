@@ -5,7 +5,7 @@ import emptyWish from "../assets/empty-wish.gif";
 import api from "../services/api";
 
 const Wishlist = () => {
-  const { wishlist } = useWishlistContext();
+  useWishlistContext();
   const [annonces,setAnnonces] = useState([]);
   useEffect(() => {
     const listAnnonce = async () => {

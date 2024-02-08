@@ -1,22 +1,16 @@
-import React, { useState } from "react";
-import { useProductsContext } from "../../contexts";
+import React from "react";
 import { useNavigate } from "react-router";
-import Mazda from "../../assets/img/Mazda.jpg";
-import Mitsubishi from "../../assets/img/Mitsubishi.jpg";
 
 const CategoryCard = (
   marque 
 ) => {
   console.log(marque);
   const navigate = useNavigate();
-  const { applyFilters } = useProductsContext();
-  const [showCategory, setShowCategory] = useState(true);
   const clickHandler = () => {
     // applyFilters("categories", []);
     navigate("/products", { state: { from: "category" } });
     
   };
-  const img = marque.marque.libelle;
   return (
     <section
       className=" flex flex-col items-center rounded-xl  bg-black/[.06] cursor-pointer gap-3 relative overflow-hidden  categoryContainer"

@@ -9,14 +9,14 @@ const Checkout = () => {
   const navigate = useNavigate();
   const { cart } = useCartContext();
   const [showModal, setShowModal] = useState(false);
-  const [isOrderPlaced, setIsOrderPlaced] = useState(false);
+  const [ setIsOrderPlaced] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     if (location?.state !== "cart" || !cart.length) {
       navigate("/");
     }
-  }, []);
+  }, [cart.length, location?.state, navigate]);
 
   return (
     <>

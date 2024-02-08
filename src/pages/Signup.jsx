@@ -31,7 +31,7 @@ const Signup = () => {
     return () => {
       clearInterval(id);
     };
-  }, [isAuthenticated]);
+  }, [isAuthenticated, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

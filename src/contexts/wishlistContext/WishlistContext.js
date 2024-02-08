@@ -3,7 +3,6 @@ import { initialState, wishlistReducer } from "../../reducers/wishlistReducer";
 import {
   deleteProductFromWishlistService,
   getWishlistItemsService,
-  postAddProductToWishlistService,
 } from "../../api/apiServices";
 import { actionTypes } from "../../utils/actionTypes";
 import { useAuthContext, useProductsContext } from "..";

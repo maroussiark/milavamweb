@@ -6,7 +6,7 @@ const ErrorPage = () => {
     <div className="h-[60vh] w-full flex flex-col items-center justify-center ">
       <img
         src={errorImage}
-        alt="error-image"
+        alt=""
         className="w-full xs:w-[80%] sm:w-1/2"
       />
       <span className="mt-3 font-sans text-2xl md:text-4xl font-bold uppercase  tracking-wide text-gray-300">

@@ -13,7 +13,7 @@ const Orders = () => {
         navigate("/products");
       }, 3000);
     }
-  }, []);
+  }, [location?.state, navigate]);
   return (
     <div className="min-h-[80vh] flex justify-center items-center py-3 ">
       <div className="bg-white h-1/2 w-96 m-auto  rounded-md flex flex-col items-center justify-center p-5 modalShadow">

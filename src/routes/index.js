@@ -5,7 +5,7 @@ import RequiresAuth from "./RequiresAuth";
 import { authRoutes, contentRoutes } from "./publicRoutes";
 import { privateRoutes } from "./privateRoutes";
 
-import { ErrorPage, Home, Login } from "../pages";
+import { ErrorPage, Home } from "../pages";
 import { useAuthContext } from "../contexts";
 
 const Index = () => {
