@@ -15,7 +15,7 @@ const ProductsContextProvider = ({ children }) => {
   const { token } = useAuthContext();
   const [loading, setLoading] = useState(false);
 
-  const [state, dispatch] = useReducer(productsReducer, initialState);
+  const [dispatch] = useReducer(productsReducer, initialState);
   const [currentAddress, setCurrentAddress] = useState(null);
   const [isOrderPlaced, setisOrderPlaced] = useState(false);
 
@@ -47,26 +47,30 @@ const ProductsContextProvider = ({ children }) => {
     })();
   }, [token]);
 
-  const getProductById = (_productId) =>
-    null;
+  const clearFilters = () => {
+
+  };
+
+  const getProductById = (_productId) => {
+  }
 
   const updateInCartOrInWish = (_productId, _type, _value) => {
-    null
+    
   };
 
   const applyFilters = (_filterType, _filterValue) => {
-    null
+    
   };
   const trendingProducts = null;
 
   const addAddress = (_newAddress) => {
-    null
+    
   };
   const updateAddress = (_addressId, _updatedAddress) => {
-    null
+    
   };
   const deleteAddress = (_addressId) => {
-   null
+    
   };
   const isInCart = (_productId) =>
     null;
