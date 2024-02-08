@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import api from "../../services/api";
 import { useAuthContext } from "../../contexts";
+import api_public from "../../services/api_public";
 
 const CategoryList = ({ catRef }) => {
   const [marque,setMarque] = useState([]);
@@ -12,7 +13,7 @@ const CategoryList = ({ catRef }) => {
   useEffect(() => {
     const listMarque = async () => {
       try {
-        const response = await api.get("/marque");
+        const response = await api_public.get("/public/annonce/marque");
         // console.log(response);
         setMarque(response.data.data);
       } catch (error) {
