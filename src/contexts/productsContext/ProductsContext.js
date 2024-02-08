@@ -6,8 +6,6 @@ import {
 } from "../../api/apiServices";
 import {
   actionTypes,
-  addressTypes,
-  filterTypes,
 } from "../../utils/actionTypes";
 import { useAuthContext } from "..";
 
@@ -49,30 +47,30 @@ const ProductsContextProvider = ({ children }) => {
     })();
   }, [token]);
 
-  const getProductById = (productId) =>
+  const getProductById = (_productId) =>
     null;
 
-  const updateInCartOrInWish = (productId, type, value) => {
+  const updateInCartOrInWish = (_productId, _type, _value) => {
     null
   };
 
-  const applyFilters = (filterType, filterValue) => {
+  const applyFilters = (_filterType, _filterValue) => {
     null
   };
   const trendingProducts = null;
 
-  const addAddress = (newAddress) => {
+  const addAddress = (_newAddress) => {
     null
   };
-  const updateAddress = (addressId, updatedAddress) => {
+  const updateAddress = (_addressId, _updatedAddress) => {
     null
   };
-  const deleteAddress = (addressId) => {
+  const deleteAddress = (_addressId) => {
    null
   };
-  const isInCart = (productId) =>
+  const isInCart = (_productId) =>
     null;
-  const isInWish = (productId) =>
+  const isInWish = (_productId) =>
     null;
 
   return (
