@@ -50,7 +50,7 @@ const ProductsContextProvider = ({ children }) => {
   }, [token]);
 
   const getProductById = (productId) =>
-    state.allProducts.find((product) => product._id === productId);
+    null;
 
   const updateInCartOrInWish = (productId, type, value) => {
     if (productId) {

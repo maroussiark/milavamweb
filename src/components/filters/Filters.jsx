@@ -2,7 +2,6 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useProductsContext } from "../../contexts";
 
 import { useEffect, useState } from "react";
-import api from "../../services/api";
 import ProductListing from "../../pages/ProductListing";
 import api_public from "../../services/api_public";
 
@@ -35,7 +34,7 @@ const Filters = ({ isFilterOpen, setIsFilterOpen }) => {
   useEffect(() => {
     const listMarque = async () => {
       try {
-        const response = await api.get("/marque");
+        const response = await api_public.get("/public/annonce/marque");
         console.log(response);
         setMarque(response.data.data);
       } catch (error) {
@@ -48,7 +47,7 @@ const Filters = ({ isFilterOpen, setIsFilterOpen }) => {
   useEffect(() => {
     const listCategorie = async () => {
       try {
-        const response = await api.get("/categorie");
+        const response = await api_public.get("/public/annonce/categorie");
         console.log(response);
         setCategorie(response.data.data);
       } catch (error) {
@@ -61,7 +60,7 @@ const Filters = ({ isFilterOpen, setIsFilterOpen }) => {
   useEffect(() => {
     const listCarburant = async () => {
       try {
-        const response = await api.get("/carburant");
+        const response = await api_public.get("/public/annonce/carburant");
         console.log(response);
         setCarburant(response.data.data);
       } catch (error) {
