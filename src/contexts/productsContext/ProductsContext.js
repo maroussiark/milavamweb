@@ -53,68 +53,27 @@ const ProductsContextProvider = ({ children }) => {
     null;
 
   const updateInCartOrInWish = (productId, type, value) => {
-    if (productId) {
-      dispatch({
-        type: actionTypes.UPDATE_PRODUCTS,
-        payload: state.allProducts.map((item) =>
-          item._id === productId ? { ...item, [type]: value } : item
-        ),
-      });
-    } else {
-      dispatch({
-        type: actionTypes.UPDATE_PRODUCTS,
-        payload: state.allProducts.map((item) => ({
-          ...item,
-          inCart: false,
-          qty: 0,
-        })),
-      });
-    }
+    null
   };
 
   const applyFilters = (filterType, filterValue) => {
-    dispatch({
-      type: filterTypes.FILTERS,
-      payload: { filterType, filterValue },
-    });
-  };
-  const clearFilters = () => {
-    dispatch({
-      type: filterTypes.CLEAR_FILTER,
-    });
+    null
   };
   const trendingProducts = null;
 
   const addAddress = (newAddress) => {
-    dispatch({
-      type: addressTypes.ADD_ADDRESS,
-      payload: [newAddress, ...state.addressList],
-    });
+    null
   };
   const updateAddress = (addressId, updatedAddress) => {
-    dispatch({
-      type: addressTypes.ADD_ADDRESS,
-      payload: state.addressList.map((item) =>
-        item.id === addressId ? updatedAddress : item
-      ),
-    });
-    if (currentAddress.id === addressId) {
-      setCurrentAddress(updatedAddress);
-    }
+    null
   };
   const deleteAddress = (addressId) => {
-    dispatch({
-      type: addressTypes.ADD_ADDRESS,
-      payload: state.addressList.filter(({ id }) => id !== addressId),
-    });
-    if (currentAddress.id === addressId) {
-      setCurrentAddress({});
-    }
+   null
   };
   const isInCart = (productId) =>
-    state.allProducts.find((item) => item._id === productId && item.inCart);
+    null;
   const isInWish = (productId) =>
-    state.allProducts.find((item) => item._id === productId && item.inWish);
+    null;
 
   return (
     <ProductsContext.Provider
