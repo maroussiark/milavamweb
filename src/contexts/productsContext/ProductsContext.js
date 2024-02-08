@@ -83,9 +83,7 @@ const ProductsContextProvider = ({ children }) => {
       type: filterTypes.CLEAR_FILTER,
     });
   };
-  const trendingProducts = state.allProducts.filter(
-    (product) => product.trending
-  );
+  const trendingProducts = null;
 
   const addAddress = (newAddress) => {
     dispatch({
