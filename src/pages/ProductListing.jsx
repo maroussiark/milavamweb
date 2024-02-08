@@ -4,7 +4,7 @@ import { MdKeyboardArrowUp } from "react-icons/md";
 import bannerImg from "../assets/img/car3.jpg";
 import loadingGif from "../assets/loading.gif";
 
-import { Filters, SingleProduct, SortBy } from "../components";
+import { Filters, SingleProduct } from "../components";
 
 import { useProductsContext } from "../contexts";
 import { useEffect, useState } from "react";
@@ -90,7 +90,7 @@ const ProductListing = ({initialAnnonces}) => {
                 isFilterOpen={isFilterOpen}
                 setIsFilterOpen={setIsFilterOpen}
               />
-              <SortBy />
+        
               <button
                 className={`flex py-1 px-2 rounded-md shadow-md items-center  gap-1 hover:bg-[--primary-text-color] hover:text-white hover:shadow-lg ${
                   isFilterOpen ? "bg-[--primary-text-color] text-white" : ""
