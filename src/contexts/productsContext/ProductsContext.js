@@ -18,7 +18,7 @@ const ProductsContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
 
   const [state, dispatch] = useReducer(productsReducer, initialState);
-  const [currentAddress, setCurrentAddress] = useState(state.addressList[0]);
+  const [currentAddress, setCurrentAddress] = useState(null);
   const [isOrderPlaced, setisOrderPlaced] = useState(false);
 
   useEffect(() => {
