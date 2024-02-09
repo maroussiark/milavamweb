@@ -13,7 +13,7 @@ const ProductsContextProvider = ({ children }) => {
   const [isOrderPlaced, setisOrderPlaced] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(false);
      
     
   }, [dispatch, token]);
