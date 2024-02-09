@@ -6,7 +6,6 @@ import loadingGif from "../assets/loading.gif";
 
 import { Filters, SingleProduct} from "../components";
 
-import { useProductsContext } from "../contexts";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import api_public from "../services/api_public";
@@ -17,7 +16,7 @@ const ProductListing = ({initialAnnonces}) => {
   const [isFilterOpen, setIsFilterOpen] = useState(false);
   const [showScrollArrow, setShowScrollArrow] = useState(false);
 
-  const { loading } = useProductsContext();
+  const [ loading,setLoading ] = useState(true);
   
 
   const scrollToTop = () => {
@@ -54,6 +53,7 @@ const ProductListing = ({initialAnnonces}) => {
           const response = await api_public.get("/public/annonce/accueil");
           // console.log(response);
           setAnnonces(response.data.data);
+          setLoading(false);
         } catch (error) {
           console.error(error);
         }

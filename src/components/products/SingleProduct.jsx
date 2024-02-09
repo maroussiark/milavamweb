@@ -89,6 +89,7 @@ const SingleProduct = ({ annonce }) => {
           <p className="text-sm text-gray-600">{annonce.utilisateur.nom} {annonce.utilisateur.prenom}</p>
         </div>
         <div className="w-full pt-2 border-t flex justify-between items-center">
+            
           <button
             className={`border border-[--primary-text-color]  py-1.5 text-sm  rounded-full px-6 hover:bg-[--primary-text-color] hover:text-white transition hover:shadow-md disabled:cursor-not-allowed`}
             disabled={disableCart}

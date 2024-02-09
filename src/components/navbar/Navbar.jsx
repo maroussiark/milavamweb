@@ -1,24 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { BsBookmarkHeart, BsEnvelope } from "react-icons/bs";
+import { BsBookmarkHeart, BsEnvelope, BsList } from "react-icons/bs";
 import { MdOutlineExplore } from "react-icons/md";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import defaultUser from "../../assets/defaultUser.png";
 import MenuDropdown from "./MenuDropdown";
 import Logo from "./Logo";
-import {
-  useAuthContext,
-  useCartContext,
-  useWishlistContext,
-} from "../../contexts";
+
 
 import Search from "../filters/Search";
 
 const Navbar = () => {
-  useAuthContext();
-  useCartContext();
-  useWishlistContext();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [colorChange, setColorChange] = useState(false);
@@ -69,6 +62,13 @@ const Navbar = () => {
             <MdOutlineExplore className="xs:hidden" />
           </Link>
           <ul className=" hidden md:flex justify-between text-2xl ps-1">
+          <li
+              className="relative bg-gray-200  p-2 rounded-full hover:bg-yellow-800 hover:text-white cursor-pointer mx-2 transition shadow-sm"
+              onClick={() => navigate("/myannonce")}
+            >
+              <BsList />
+              
+            </li>
             <li
               className="relative bg-gray-200  p-2 rounded-full hover:bg-yellow-800 hover:text-white cursor-pointer mx-2 transition shadow-sm"
               onClick={() => navigate("/wishlist")}
@@ -82,6 +82,7 @@ const Navbar = () => {
             >
               <BsEnvelope />
             </li>
+            
           </ul>
           <section className="md:hidden cursor-pointer relative">
             <RxHamburgerMenu
