@@ -15,10 +15,9 @@ class ChatList extends Component {
       username : null,
       receiver : null,
       id: 0,
+
     };
   }
-
-
   
   componentDidMount() {
     this.fetchData();
@@ -34,11 +33,14 @@ class ChatList extends Component {
     }
   }
 
+  handleReload = () =>{
+    this.fetchData();
+  }
+
   handleLoad = async (id,username,rec) =>{
     console.log('id',id);
     try {
       const response = await api.get('/messageries/mes-messages');
-      
           this.setState({message : response.data[id].message, username : username, receiver:rec})
           console.log('msg :',this.state.receiver);
       
@@ -51,7 +53,7 @@ class ChatList extends Component {
 
   handleClick = (id,msg,username,rec) =>{
     this.setState({id:id,message : msg, username : username, receiver:rec})
-    console.log('msg :',this.state.receiver);
+    console.log('msg :',this.state.id);
   };
 
   iduser = () =>{
@@ -85,6 +87,7 @@ class ChatList extends Component {
   
     return null;
   };
+  
   render() {
     const {data,message,username,receiver,id} = this.state;
     return (
@@ -122,7 +125,7 @@ class ChatList extends Component {
             </div>
         </div>
       
-        {data.length > 0 ? (<ChatContent id={id} chat = {message} username = {username} receiver = {receiver} reload={this.handleLoad}  />) :(<p className="font-sans text-4xl  font-bold uppercase  tracking-wide text-gray-300 text-center w-full py-32">
+        {data.length > 0 ? (<ChatContent id={id} chat = {message} username = {username} receiver = {receiver} reload={this.handleReload}   />) :(<p className="font-sans text-4xl  font-bold uppercase  tracking-wide text-gray-300 text-center w-full py-32">
                 Nothing to Show!
         </p>)}
         {/* <UserProfile /> */}

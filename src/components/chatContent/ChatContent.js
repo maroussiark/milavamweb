@@ -5,6 +5,7 @@ import Avatar from "../chatList/Avatar";
 import ChatItem from "./ChatItem";
 import { FaPaperPlane } from "react-icons/fa";
 import api from "../../services/api";
+import { notify } from "../../utils/utils";
 
 
 
@@ -18,8 +19,8 @@ export default class ChatContent extends Component {
       messagereq : this.initialValue
     };
   }
-  reload = (id,username,rec) =>{
-    this.props.reload(id,username,rec);
+  reload = () =>{
+    this.props.reload();
   } 
   scrollToBottom = () => {
     this.messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -66,17 +67,21 @@ export default class ChatContent extends Component {
   handleSubmit = async (e) => {
     e.preventDefault();
     console.log(this.state.messagereq);
+    notify("info","Sending",100);
+
     // eslint-disable-next-line react/no-direct-mutation-state
     this.state.messagereq.idReceiver = this.props.receiver;
     try {
       const resp = await api.post('/messageries', this.state.messagereq);
-      // window.location.reload();
       console.log(resp);
+      this.reload();
       
-      this.reload(this.props.id,this.props.username,this.props.receiver);
     } catch (error) {
       console.error('errorr',error);
     }
+    window.location.reload();
+    notify("success","Envoye",100);
+
   };
 
   render() {
@@ -97,7 +102,7 @@ export default class ChatContent extends Component {
               </div>
             {this.props.chat.map((itm, index) => {
               return (
-                <div className="content__body">
+                <div className="content__body" id="content">
                   <ChatItem
                     animationDelay={index + 2}
                     key={itm.key}
