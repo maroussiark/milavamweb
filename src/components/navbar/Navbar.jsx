@@ -16,7 +16,7 @@ import {
 import Search from "../filters/Search";
 
 const Navbar = () => {
-  const { token } = useAuthContext();
+  useAuthContext();
   useCartContext();
   useWishlistContext();
   const navigate = useNavigate();
