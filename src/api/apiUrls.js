@@ -2,7 +2,7 @@ const baseUrl = "/api";
 
 //auth url
 export const SIGNUP_URL = `${baseUrl}/auth/signup`;
-export const LOGIN_URL = `http://localhost:8080/rest/auth/login`;
+export const LOGIN_URL = `https://voiturecloudv3-production.up.railway.app/rest/auth/login`;
 
 //products url
 
