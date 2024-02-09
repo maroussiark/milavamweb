@@ -90,8 +90,8 @@ const Login = () => {
                   onClick={() => {
                     setLoginCredentials({
                       ...loginCredentials,
-                      email: "test@gmail.com",
-                      password: "azerty",
+                      email: "jean@gmail.com",
+                      password: "1234",
                     });
                   }}
                 >

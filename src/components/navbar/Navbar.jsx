@@ -17,8 +17,8 @@ import Search from "../filters/Search";
 
 const Navbar = () => {
   const { token } = useAuthContext();
-  const { cart } = useCartContext();
-  const { wishlist } = useWishlistContext();
+  useCartContext();
+  useWishlistContext();
   const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [colorChange, setColorChange] = useState(false);
@@ -74,9 +74,9 @@ const Navbar = () => {
               onClick={() => navigate("/wishlist")}
             >
               <BsBookmarkHeart />
-              {token && wishlist.length > 0 && (
+              {token && (
                 <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-rose-600 border-2 border-[--theme-color] rounded-full -top-2 -right-2 ">
-                  {wishlist.length}
+                  
                 </div>
               )}
             </li>
@@ -85,9 +85,9 @@ const Navbar = () => {
               onClick={() => navigate("/cart")}
             >
               <BsEnvelope />
-              {token && cart.length > 0 && (
+              {token && (
                 <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-rose-600 border-2 border-[--theme-color] rounded-full -top-2 -right-2 ">
-                  {cart.length}
+                  
                 </div>
               )}
             </li>
