@@ -59,7 +59,7 @@ const CartContextProvider = ({ children }) => {
   const clearCart = () => {
   }
 
-  const { totalPriceOfCartProducts, actualPriceOfCart } = null;
+  const { totalPriceOfCartProducts, actualPriceOfCart } = 100;
 
   return (
     <CartContext.Provider
