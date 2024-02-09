@@ -1,12 +1,5 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import { initialState, productsReducer } from "../../reducers/productsReducer";
-import {
-  getAllCategoriesService,
-  getAllProductsService,
-} from "../../api/apiServices";
-import {
-  actionTypes,
-} from "../../utils/actionTypes";
 import { useAuthContext } from "..";
 
 export const ProductsContext = createContext();
@@ -21,31 +14,9 @@ const ProductsContextProvider = ({ children }) => {
 
   useEffect(() => {
     setLoading(true);
-    (async () => {
-      try {
-        const productsRes = await getAllProductsService();
-        if (productsRes.status === 200) {
-          dispatch({
-            type: actionTypes.INITIALIZE_PRODUCTS,
-            payload: productsRes.data.products,
-          });
-        }
-
-        const categoryRes = await getAllCategoriesService();
-
-        if (categoryRes.status === 200) {
-          dispatch({
-            type: actionTypes.INITIALIZE_CATEGORIES,
-            payload: categoryRes.data.categories,
-          });
-        }
-      } catch (e) {
-        console.log(e);
-      } finally {
-        setLoading(false);
-      }
-    })();
-  }, [dispatch,token]);
+     
+    
+  }, [dispatch, token]);
 
   const clearFilters = () => {
 
