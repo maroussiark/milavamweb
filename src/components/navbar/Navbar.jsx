@@ -74,22 +74,13 @@ const Navbar = () => {
               onClick={() => navigate("/wishlist")}
             >
               <BsBookmarkHeart />
-              {token && (
-                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-rose-600 border-2 border-[--theme-color] rounded-full -top-2 -right-2 ">
-                  
-                </div>
-              )}
+              
             </li>
             <li
               className="relative bg-green-500 text-white p-2 rounded-full hover:bg-yellow-500 cursor-pointer mx-2 transition shadow-sm"
               onClick={() => navigate("/cart")}
             >
               <BsEnvelope />
-              {token && (
-                <div className="absolute inline-flex items-center justify-center w-6 h-6 text-xs font-bold text-white bg-rose-600 border-2 border-[--theme-color] rounded-full -top-2 -right-2 ">
-                  
-                </div>
-              )}
             </li>
           </ul>
           <section className="md:hidden cursor-pointer relative">
